@@ -2,9 +2,13 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
 import styles from './styles';
+import {useDispatch} from 'react-redux';
 
 const Login = () => {
-  const [value, onChangeText] = React.useState('');
+  const dispatch = useDispatch();
+  const onChangeText = text => {
+    dispatch({type: 'SET_VISITOR', text: text});
+  };
   return (
     <>
       <Image
@@ -16,7 +20,6 @@ const Login = () => {
         <View style={styles.card}>
           <Text style={styles.welcome}>Welcome to My CV!!</Text>
           <TextInput
-            value={value}
             onChangeText={text => onChangeText(text)}
             style={styles.textInput}
             placeholder={'Visitor Name'}
