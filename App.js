@@ -9,9 +9,11 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import LoginScreen from 'screens/Login';
 import configureStore from './app/store';
 import {Provider} from 'react-redux';
+
+import LoginScreen from 'screens/Login';
+import Main from './app/Main';
 
 const Stack = createNativeStackNavigator();
 const store = configureStore();
@@ -21,9 +23,10 @@ function App() {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName={'Login'}
+          initialRouteName={'Main'}
           screenOptions={{headerShown: false}}>
           <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Main" component={Main} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
