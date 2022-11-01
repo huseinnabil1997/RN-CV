@@ -12,56 +12,58 @@ import ProfileScreen from './Profile';
 
 const Tab = createBottomTabNavigator();
 
-const MainNav = () => (
-  <Tab.Navigator
-    screenOptions={({route}) => ({
-      tabBarLabel: () => <Text>{route.name}</Text>,
-      tabBarShowLabel: false,
-      tabBarIcon: ({focused}) => {
-        let iconName;
+const MainNav = props => {
+  return (
+    <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarLabel: () => <Text>{route.name}</Text>,
+        tabBarShowLabel: false,
+        tabBarIcon: ({focused}) => {
+          let iconName;
 
-        switch (route.name) {
-          case 'WorkExp':
-            iconName = focused
-              ? require('@assets/images/icons/work_active.png')
-              : require('@assets/images/icons/work_inactive.png');
-            break;
-          case 'Skills':
-            iconName = focused
-              ? require('@assets/images/icons/skills_active.png')
-              : require('@assets/images/icons/skills_inactive.png');
-            break;
-          case 'Education':
-            iconName = focused
-              ? require('@assets/images/icons/education_active.png')
-              : require('@assets/images/icons/education_inactive.png');
-            break;
-          case 'Contact':
-            iconName = focused
-              ? require('@assets/images/icons/contact_active.png')
-              : require('@assets/images/icons/contact_inactive.png');
-            break;
-          case 'Profile':
-            iconName = focused
-              ? require('@assets/images/icons/profile_icon_active.png')
-              : require('@assets/images/icons/profile_icon_black.png');
-            break;
-        }
-        return <Image style={styles.image} source={iconName} />;
-      },
-      tabBarStyle: {height: getBottomSpace() + 58},
-      tabBarItemStyle: {Padding: 1},
-      tabBarActiveTintColor: 'red',
-      tabBarInactiveTintColor: 'grey',
-      headerShown: false,
-    })}>
-    <Tab.Screen name="Profile" component={ProfileScreen} />
-    <Tab.Screen name="Contact" component={ContactScreen} />
-    <Tab.Screen name="Education" component={EducationScreen} />
-    <Tab.Screen name="Skills" component={SkillsScreen} />
-    <Tab.Screen name="WorkExp" component={WorkExpScreen} />
-  </Tab.Navigator>
-);
+          switch (route.name) {
+            case 'WorkExp':
+              iconName = focused
+                ? require('@assets/images/icons/work_active.png')
+                : require('@assets/images/icons/work_inactive.png');
+              break;
+            case 'Skills':
+              iconName = focused
+                ? require('@assets/images/icons/skills_active.png')
+                : require('@assets/images/icons/skills_inactive.png');
+              break;
+            case 'Education':
+              iconName = focused
+                ? require('@assets/images/icons/education_active.png')
+                : require('@assets/images/icons/education_inactive.png');
+              break;
+            case 'Contact':
+              iconName = focused
+                ? require('@assets/images/icons/contact_active.png')
+                : require('@assets/images/icons/contact_inactive.png');
+              break;
+            case 'Profile':
+              iconName = focused
+                ? require('@assets/images/icons/profile_icon_active.png')
+                : require('@assets/images/icons/profile_icon_black.png');
+              break;
+          }
+          return <Image style={styles.image} source={iconName} />;
+        },
+        tabBarStyle: {height: getBottomSpace() + 58},
+        tabBarItemStyle: {Padding: 1},
+        tabBarActiveTintColor: 'red',
+        tabBarInactiveTintColor: 'grey',
+        headerShown: false,
+      })}>
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Contact" component={ContactScreen} />
+      <Tab.Screen name="Education" component={EducationScreen} />
+      <Tab.Screen name="Skills" component={SkillsScreen} />
+      <Tab.Screen name="WorkExp" component={WorkExpScreen} />
+    </Tab.Navigator>
+  );
+};
 
 const styles = StyleSheet.create({
   image: {

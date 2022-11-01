@@ -4,7 +4,7 @@ import {TextInput} from 'react-native-gesture-handler';
 import styles from './styles';
 import {useDispatch} from 'react-redux';
 
-const Login = () => {
+const Login = props => {
   const dispatch = useDispatch();
   const onChangeText = text => {
     dispatch({type: 'SET_VISITOR', text: text});
@@ -24,7 +24,9 @@ const Login = () => {
             style={styles.textInput}
             placeholder={'Visitor Name'}
           />
-          <TouchableOpacity style={styles.login}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('Main')}
+            style={styles.login}>
             <Text style={styles.start}>START</Text>
           </TouchableOpacity>
         </View>

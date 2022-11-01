@@ -23,7 +23,7 @@ function App() {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName={'Main'}
+          initialRouteName={'Login'}
           screenOptions={{headerShown: false}}>
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Main" component={Main} />

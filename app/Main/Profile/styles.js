@@ -16,10 +16,15 @@ export default StyleSheet.create({
     fontSize: 20,
     color: 'black',
     fontWeight: 'bold',
-    marginTop: 10,
+    marginBottom: 12,
     textAlign: 'left',
   },
   imageBg: {
     flex: 1,
+  },
+  greetings: {
+    color: 'grey',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });
