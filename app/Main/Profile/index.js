@@ -14,11 +14,11 @@ const Profile = props => {
     Animated.sequence([
       Animated.timing(fadeAnim, {
         toValue: 1,
-        duration: 3000,
+        duration: 1000,
       }),
       Animated.timing(fadeAnim, {
         toValue: 0,
-        duration: 3000,
+        duration: 1000,
       }),
     ]).start();
   });
@@ -27,7 +27,7 @@ const Profile = props => {
     setGreetings(false);
     Animated.timing(fadeProfile, {
       toValue: 1,
-      duration: 2000,
+      duration: 1000,
     }).start();
   }, 6000);
 
