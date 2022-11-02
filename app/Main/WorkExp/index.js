@@ -21,11 +21,12 @@ const Fooddev = () => (
       </Text>
     </View>
     <Text>What I do :</Text>
-    <Text>- Work with the team, implement UI for the application</Text>
+    <Text>- Work with the team, implement UI to the application</Text>
     <Text>- API integration using Postman and axios</Text>
     <Text>- App feature updates</Text>
     <Text>- Maintain app</Text>
     <Text>- Fix Bugs and Error</Text>
+    <Text>- Coded using JavaScript and React Native</Text>
   </View>
 );
 
@@ -36,7 +37,7 @@ const Privolive = () => (
       <Text>Video call streaming service app</Text>
     </View>
     <Text>What I do :</Text>
-    <Text>- Work with the team, implement UI for the application</Text>
+    <Text>- Work with the team, implement UI to the application</Text>
     <Text>- Fix Bugs and Error</Text>
     <Text>- Coded using TypeScript</Text>
   </View>
@@ -45,30 +46,59 @@ const Privolive = () => (
 const Autopay = () => (
   <View style={{padding: 10}}>
     <View style={{marginBottom: 5}}>
-      <Text>September 2022 - November 2022</Text>
-      <Text>Video call streaming service app</Text>
+      <Text>March 2020 - November 2020</Text>
+      <Text>Digital payments app</Text>
     </View>
     <Text>What I do :</Text>
-    <Text>- Work with the team, implement UI for the application</Text>
+    <Text>- Work with the team, implement UI to the application</Text>
+    <Text>- API integration using Postman and axios</Text>
+    <Text>- App feature updates</Text>
     <Text>- Fix Bugs and Error</Text>
-    <Text>- Coded using TypeScript</Text>
+    <Text>- Coded using JavaScript and React Native</Text>
+    <Text>- Maintain app</Text>
   </View>
 );
 
 const BahanaSekuritas = () => (
   <View style={{padding: 10}}>
     <View style={{marginBottom: 5}}>
-      <Text>September 2022 - November 2022</Text>
-      <Text>Video call streaming service app</Text>
+      <Text>December 2020 - May 2021</Text>
+      <Text>Finance app</Text>
     </View>
     <Text>What I do :</Text>
-    <Text>- Work with the team, implement UI for the application</Text>
+    <Text>- Work with the team, implement UI to the application</Text>
+    <Text>- API integration using Postman and axios</Text>
+    <Text>- App feature updates</Text>
     <Text>- Fix Bugs and Error</Text>
-    <Text>- Coded using TypeScript</Text>
+    <Text>- Maintain app</Text>
+    <Text>- Coded using JavaScript, React Native, and ReactJs</Text>
   </View>
 );
+
+const SIKERJA = () => (
+  <View style={{padding: 10}}>
+    <View style={{marginBottom: 5}}>
+      <Text>October 2019 - March 2020</Text>
+      <Text>
+        Application that helps ITB logistics in selecting vendors and assessing
+        vendors with AHP
+      </Text>
+    </View>
+    <Text>What I do :</Text>
+    <Text>- Design UI/UX</Text>
+    <Text>- Implement UI to the application</Text>
+    <Text>- API integration using Postman and axios</Text>
+    <Text>- App feature updates</Text>
+    <Text>- Fix Bugs and Error</Text>
+    <Text>- Coded using JavaScript, React Native Expo</Text>
+    <Text>- Maintain app</Text>
+  </View>
+);
+
 const WorkExp = () => {
   const [DIA, setDIA] = useState('Fooddev');
+  const [ISI, setISI] = useState('Autopay');
+  const [sanbercode, setSanbercode] = useState('ITB');
   const FullWidth = Dimensions.get('window').width;
 
   return (
@@ -121,13 +151,47 @@ const WorkExp = () => {
               <Text style={{fontStyle: 'italic'}}>(March 2020 - May 2021)</Text>
             </Text>
           </View>
+          <View style={styles.tabContainer}>
+            <TouchableOpacity
+              onPress={() => setISI('Autopay')}
+              style={[
+                styles.tab,
+                ISI == 'Autopay' ? styles.activeTab : styles.inactiveTab,
+              ]}>
+              <Text>Autopay</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setISI('Bahana')}
+              style={[
+                styles.tab,
+                ISI == 'Bahana' ? styles.activeTab : styles.inactiveTab,
+              ]}>
+              <Text>Bahana Sekuritas</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.tabContent}>
+            {ISI == 'Autopay' ? <Autopay /> : <BahanaSekuritas />}
+          </View>
           <View style={{flex: 3}}>
             <Text style={styles.DIA}>
               PT. Sanbercode{'\n'}
               <Text style={{fontStyle: 'italic'}}>
-                (January 2022 - November 2022)
+                (October 2019 - March 2020)
               </Text>
             </Text>
+          </View>
+          <View style={styles.tabContainer}>
+            <TouchableOpacity
+              onPress={() => setSanbercode('ITB')}
+              style={[
+                styles.tab,
+                sanbercode == 'ITB' ? styles.activeTab : styles.inactiveTab,
+              ]}>
+              <Text>SIKERJA</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={(styles.tabContent, {height: 200})}>
+            {sanbercode == 'ITB' ? <SIKERJA /> : null}
           </View>
         </ScrollView>
       </View>
