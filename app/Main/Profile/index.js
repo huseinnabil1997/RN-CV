@@ -14,7 +14,7 @@ const Profile = props => {
     Animated.sequence([
       Animated.timing(fadeAnim, {
         toValue: 1,
-        duration: 1000,
+        duration: 2000,
       }),
       Animated.timing(fadeAnim, {
         toValue: 0,
@@ -29,7 +29,7 @@ const Profile = props => {
       toValue: 1,
       duration: 1000,
     }).start();
-  }, 6000);
+  }, 3000);
 
   return (
     <ImageBackground
@@ -48,7 +48,6 @@ const Profile = props => {
           <Animated.View
             style={[
               {
-                // Bind opacity to animated value
                 opacity: fadeAnim,
               },
             ]}>
