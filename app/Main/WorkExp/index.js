@@ -120,7 +120,7 @@ const WorkExp = () => {
             <Text style={styles.DIA}>
               PT. Digital Integrasi Asia{'\n'}
               <Text style={{fontStyle: 'italic'}}>
-                (October 2019 - March 2020)
+                (January 2022 - November 2022)
               </Text>
             </Text>
             <View style={styles.tabContainer}>
